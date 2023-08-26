@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}  
+.paper{
+    border: 1px solid #000;
+    padding: 10px;
+}
+form input{
+    width: 40px;
+    height: 30px;
+}
+table, table td{padding: 10px;}
+#year{width: 50px;}#image, #submit, #testpass, #date, #cpass,#z1,#z2,#z3,#z4,#z5,#z6,#z7,#z0{width:auto;height: auto;}
+.table{border-collapse: collapse;
+margin: 10px 0;width: 160px;}
+.table tr{color: rgb(150, 190, 250); text-align: left; font-weight: bold;}
+.table tr:last-of-type{font-size: 10px; padding-top: 5px; text-align: center;}
+table input{font-size: 15px;}
+p{margin:10px;word-spacing:5px;}
+textarea, input{margin-left:20px;}
+#firt{margin-left:20px;font-weight:bold;font-size:20px;}
+#date{width: 200px;height: 30px;}
+.crucial{
+    display: none;
+}#file{width: 240px;height: 40px;}
+.firta{
+  border-collapse: collapse;
+}
+.firta th{
+    padding: 10px;
+    border: 1px solid #fff;
+    background-color: #000;
+    color: #fff;
+}
+.dat table {
+    border-collapse: collapse;
+    width: 100%;
+    color: #588c7e;
+    font-family: monospace;
+    font-size: 25px;
+    text-align: left;
+    }
+    .dat th {
+    background-color: #588c7e;
+    color: white;
+    }
+    .dat tr:nth-child(even) {background-color: #f2f2f2}
+
+.nav{
+    height: 50px;
+    width: 800px;
+    margin-left:50%;
+    transform: translateX(-50%); 
+    position: absolute;
+    background-color: rgb(189, 247, 187); 
+}
+.acc{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+.pic{
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.stroke{position: absolute;right: 20px;top: 10px;}
+.stroke div{
+    height: 4px;
+    width: 25px;
+    margin: 4px; 
+    background-color: rgb(38, 43, 17); 
+}
+.wel{
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    margin-top:10px;
+    margin-left: 50%;
+    transform: translateX(-50%); 
+}
+.pic1{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;transform:translateX(-50%);
+    top:50px;
+    z-index:1;
+}
+.bat{
+    position: absolute;
+    top: 50px;
+    border: 1px solid #000;background-color:#000;color:#fff;
+padding:3px;
+display:none;
+}
+.bat a{
+text-decoration: none;
+color: #fff;
+margin-left:30px;
+padding-top:10px;
+}
+span{right:0;margin-top:-20px;background-color:#fff;color:#000;height:5px;width:5px;cursor:pointer;}
+.bat p{padding-top:10px;word-spacing:4px;}
+u, .cont{cursor:pointer;}
+.init{
+position:absolute;
+right:0;
+background-color:#000;margin-top:50px;
+width:450px;
+height:29px;
+display:none;
+}
+.init a{    
+text-decoration: none;
+margin-left:20px;color:#fff;}
+.init span{background-color: #000;color: #fff;font-weight: bold;}
+.cona input, .hom input{width: auto;height: auto;}
+.cona, #relax, .can, .hom{margin-top: 110px;}
+.progress{display: none;}
+.aaaa{width: 250px;}
+
+@media screen and (max-width: 900px) {
+    .nav{width: 100%;margin-left: 0;left: 0;transform: translateX(0);}
+    .init{width: 150px;height: 80px;}
+    .init a{margin:0;word-spacing: 3px;}
+    .init span{margin-left: -5px;background-color: #000;color: #fff;font-weight: bold;}
+}
+@media screen and (max-width:500px){
+    .wel{display: none;}
+    .pic1{top:0;}
+    .tarea{width:200px;}
+}
+.del input{
+    width: auto;
+    height: auto;  
+}
+.spa, .spb{color: red;}
+.temt{
+    margin-top:20px;
+}
+#clock{
+    position:absolute;
+    width:100%;
+    top:50px;
+    background-color:blue;
+    color:#fff;
+}
+#exp input{
+    height:auto;
+    width:auto;
+}
+#time{
+    position:absolute;
+    right:0;
+    top:0;
+}
+.bat form input, .bat form select{
+    width:auto;
+    height:auto;
+    display:none;
+}
+#selimg{margin-left:20px;width:130px;height:40px;font-size:18px;background-color:red;border-radius:9px;color:#fff;position:relative;display:flex;justify-content:center;align-items:center;}
+#hidden{background-color: red;width: 50px;height: 40px; font-size: 18px; border-radius: 9px; position: absolute;right:-60px;top:0;padding:8px;}
+#hidden2{width:140px;font-size:18px;position:absolute;padding:9px;right:-160px;top:50%;background-color:blue;color:#fff;border-radius:9px;height:40px;display:none;}
+#sosop{margin-left:20px;width:100px;height:50px;font-size:18px;background-color:blue;border-radius:9px;color:#fff;position:relative;display:flex;justify-content:center;align-items:center;}
+#ftlits{position:absolute;bottom:-5px;width:200px;left:20%;font-size:13px;}
+#loados{position:absolute;top:-50%;width:90px;display:none;}
+#loados img{width:50px;height:50px;}
