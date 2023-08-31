@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+- phpMyAdmin XML Dump
+- version 5.2.1
+- https://www.phpmyadmin.net
+-
+- Host: localhost:3306
+- Generation Time: Aug 27, 2023 at 11:58 AM
+- Server version: 5.7.23-23
+- PHP Version: 8.1.16
+-->
+
+<pma_xml_export version="1.0" xmlns:pma="https://www.phpmyadmin.net/some_doc_url/">
+    <!--
+    - Structure schemas
+    -->
+    <pma:structure_schemas>
+        <pma:database name="peakmein_somethingnew" collation="utf8_unicode_ci" charset="utf8">
+            <pma:table name="a">
+                CREATE TABLE `a` (
+                  `b` int(11) NOT NULL AUTO_INCREMENT,
+                  `c` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`b`),
+                  UNIQUE KEY `c` (`c`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="ghome">
+                CREATE TABLE `ghome` (
+                  `ghid` int(11) NOT NULL,
+                  `ghfile` varchar(250) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `ghtext` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `date` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+                  `msg` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL
+                ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="home">
+                CREATE TABLE `home` (
+                  `sid` varchar(40) NOT NULL,
+                  `tid` int(11) NOT NULL,
+                  `file` varchar(1200) NOT NULL,
+                  `date` varchar(23) NOT NULL,
+                  `mclass` varchar(16) NOT NULL,
+                  `hcomp` varchar(230) DEFAULT NULL,
+                  `hwch` varchar(250) DEFAULT NULL,
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  PRIMARY KEY (`id`),
+                  KEY `sid` (`sid`),
+                  KEY `tid` (`tid`),
+                  CONSTRAINT `home_ibfk_1` FOREIGN KEY (`tid`) REFERENCES `step` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=2683 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="link">
+                CREATE TABLE `link` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `code` varchar(40) NOT NULL,
+                  `email` varchar(40) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `email` (`email`),
+                  CONSTRAINT `link_ibfk_1` FOREIGN KEY (`email`) REFERENCES `step` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=76 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="lobh">
+                CREATE TABLE `lobh` (
+                  `id` int(11) NOT NULL,
+                  `ip` varchar(40) NOT NULL,
+                  `os` varchar(40) NOT NULL,
+                  `brow` varchar(40) NOT NULL,
+                  `device` varchar(40) NOT NULL,
+                  PRIMARY KEY (`id`),
+                  KEY `id` (`id`),
+                  CONSTRAINT `lobh_ibfk_1` FOREIGN KEY (`id`) REFERENCES `step` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="marks">
+                CREATE TABLE `marks` (
+                  `mtid` int(11) NOT NULL,
+                  `mid` int(11) NOT NULL,
+                  `mname` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+                  `mmarks` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+                  `mdate` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+                  `uid` varchar(40) COLLATE utf8_unicode_ci NOT NULL,
+                  PRIMARY KEY (`mid`,`uid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="password">
+                CREATE TABLE `password` (
+                  `pu` int(11) NOT NULL AUTO_INCREMENT,
+                  `pmail` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+                  `ppass` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+                  `pfname` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `plname` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+                  `pdate` date DEFAULT NULL,
+                  PRIMARY KEY (`pu`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="refer">
+                CREATE TABLE `refer` (
+                  `client` int(8) NOT NULL,
+                  `boss` int(8) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+            </pma:table>
+            <pma:table name="step">
+                CREATE TABLE `step` (
+                  `id` int(11) NOT NULL AUTO_INCREMENT,
+                  `name` varchar(20) NOT NULL,
+                  `email` varchar(40) NOT NULL,
+                  `pass` varchar(40) NOT NULL,
+                  `identity` varchar(1) NOT NULL,
+                  `mclass` varchar(16) NOT NULL,
+                  `lverify` varchar(40) DEFAULT NULL,
+                  `cverify` int(1) DEFAULT NULL,
+                  PRIMARY KEY (`id`),
+                  UNIQUE KEY `email` (`email`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=1721 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="student">
+                CREATE TABLE `student` (
+                  `cid` int(11) NOT NULL,
+                  `cdate` date NOT NULL,
+                  `cshour` int(2) NOT NULL,
+                  `csmin` int(2) NOT NULL,
+                  `cehour` int(2) NOT NULL,
+                  `cemin` int(2) NOT NULL,
+                  `cfile` tinytext,
+                  `ctest` mediumtext,
+                  `cpass` varchar(40) NOT NULL,
+                  `uid` int(11) NOT NULL AUTO_INCREMENT,
+                  PRIMARY KEY (`cid`,`cpass`),
+                  UNIQUE KEY `uid` (`uid`),
+                  CONSTRAINT `student_ibfk_1` FOREIGN KEY (`cid`) REFERENCES `step` (`id`)
+                ) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="teacher">
+                CREATE TABLE `teacher` (
+                  `sid` int(11) NOT NULL,
+                  `tid` int(11) NOT NULL,
+                  `sfile` varchar(250) NOT NULL,
+                  `stext` varchar(40) NOT NULL,
+                  `spass` varchar(40) NOT NULL,
+                  `chdate` date NOT NULL,
+                  PRIMARY KEY (`sfile`,`stext`,`chdate`),
+                  KEY `sid` (`sid`),
+                  CONSTRAINT `teacher_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `step` (`id`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+            <pma:table name="video">
+                CREATE TABLE `video` (
+                  `sid` int(6) NOT NULL,
+                  `tid` int(6) NOT NULL,
+                  `sdata` mediumtext NOT NULL,
+                  `tdata` mediumtext,
+                  `cdate` varchar(40) NOT NULL,
+                  `vid` int(11) NOT NULL AUTO_INCREMENT,
+                  `ver` int(1) NOT NULL,
+                  PRIMARY KEY (`vid`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+            </pma:table>
+        </pma:database>
+    </pma:structure_schemas>
+
+</pma_xml_export>
